@@ -1,0 +1,1 @@
+postgresql://levch98:AlNR6sOQg7vP@ep-weathered-feather-a2ipxw3z.eu-central-1.aws.neon.tech/avito?sslmode=require

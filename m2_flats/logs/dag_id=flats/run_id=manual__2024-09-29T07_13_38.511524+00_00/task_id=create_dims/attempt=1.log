@@ -1,0 +1,61 @@
+[2024-09-29T07:14:31.057+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flats.create_dims manual__2024-09-29T07:13:38.511524+00:00 [queued]>
+[2024-09-29T07:14:31.067+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flats.create_dims manual__2024-09-29T07:13:38.511524+00:00 [queued]>
+[2024-09-29T07:14:31.068+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2024-09-29T07:14:31.079+0000] {taskinstance.py:1380} INFO - Executing <Task(PostgresOperator): create_dims> on 2024-09-29 07:13:38.511524+00:00
+[2024-09-29T07:14:31.085+0000] {standard_task_runner.py:57} INFO - Started process 6188 to run task
+[2024-09-29T07:14:31.088+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flats', 'create_dims', 'manual__2024-09-29T07:13:38.511524+00:00', '--job-id', '148', '--raw', '--subdir', 'DAGS_FOLDER/flats.py', '--cfg-path', '/tmp/tmpikxbuben']
+[2024-09-29T07:14:31.091+0000] {standard_task_runner.py:85} INFO - Job 148: Subtask create_dims
+[2024-09-29T07:14:31.142+0000] {task_command.py:415} INFO - Running <TaskInstance: flats.create_dims manual__2024-09-29T07:13:38.511524+00:00 [running]> on host 5096eb060c49
+[2024-09-29T07:14:31.219+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flats' AIRFLOW_CTX_TASK_ID='create_dims' AIRFLOW_CTX_EXECUTION_DATE='2024-09-29T07:13:38.511524+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-29T07:13:38.511524+00:00'
+[2024-09-29T07:14:31.221+0000] {sql.py:274} INFO - Executing: INSERT INTO dim_text (description,processed_dttm,source) VALUES ('Квартира на набережной реки! Видовая дизайнерская студия с новым качественным ремонтом, укомплектованная всей необходимой мебелью и техникой в ЖК "Западный порт". Вся инфраструктура - рестораны, кафе, химчистка, аптека, фитнес, супермаркет.
+Хорошая транспортная доступность, метро Фили 5 минут пешком, до делового центра Москва-Сити 10 мин. на авто.
+Закрытая охраняемая территория, круглосуточное видеонаблюдение. Подземный паркинг. Вход и въезд строго через охрану и по пропускам.
+Солнечная квартира с видом на Москва Сити.
+Агентствам и Брокерам без клиента просьба не беспокоить!','2024-09-29 07:14:26','m2');
+INSERT INTO dim_text (description,processed_dttm,source) VALUES ('Продается квартира-студия общей площадью 22 кв. метров на 18 этаже жилого комплекса “Лучи”.
+Комплекс располагается в 5 минутах ходьбы от станции метро «Солнцево» и в шаговой доступности от железнодорожной станции «Новопеределкино».
+Жилой комплекс комфорт-класса представляет собой 9 монолитных и панельных многоквартирных домов высотой от 6 до 25 этажей. Комплекс “Лучи” благоустроен дворами без автомобилей, современными детскими и спортивными площадками и отапливаемыми подземными паркингами.
+В уютном районе Солнцево, вокруг современного жилого комплекса, вас ждет настоящий комфорт и удобство. Здесь находятся все необходимые социальные объекты: школы, детские сады, культурные центры, магазины и развлекательные заведения. Вы сможете легко пополнить запасы продуктов в ближайших магазинах.','2024-09-29 07:14:26','m2');
+INSERT INTO dim_district (district,processed_dttm,source) VALUES ('ЗАО','2024-09-29 07:14:26','m2');
+INSERT INTO dim_district (district,processed_dttm,source) VALUES ('ЗАО','2024-09-29 07:14:26','m2');
+INSERT INTO dim_metro (metro_station,metro_time,processed_dttm,source) VALUES ('Фили',8,'2024-09-29 07:14:26','m2');
+INSERT INTO dim_metro (metro_station,metro_time,processed_dttm,source) VALUES ('Солнцево',8,'2024-09-29 07:14:26','m2');
+INSERT INTO dim_seller (seller,seller_type,processed_dttm,source) VALUES ('Анастасия Малын','Агент','2024-09-29 07:14:26','m2');
+INSERT INTO dim_seller (seller,seller_type,processed_dttm,source) VALUES (' Группа ЛСР','Застройщик','2024-09-29 07:14:26','m2');
+INSERT INTO dim_advt (active,url,processed_dttm,source) VALUES (1,'https://m2.ru/moskva/nedvizhimost/prodazha-kvartiri-studii-26-m-19-20-etazh-481831b1-e812-4337-a7b4-9bb913ee420c/','2024-09-29 07:14:26','m2');
+INSERT INTO dim_advt (active,url,processed_dttm,source) VALUES (1,'https://m2.ru/moskva/nedvizhimost/prodazha-kvartiri-studii-22-m-18-24-etazh-a36e3b93-1e67-4466-bb5b-34eec21b6032/','2024-09-29 07:14:26','m2');
+INSERT INTO dim_building (address,wall_material,max_floor,type,processed_dttm,source) VALUES ('Москва, ЗАО, Филёвский Парк, Большая Филёвская улица, 3к3','монолит',20,'новостройка','2024-09-29 07:14:26','m2');
+INSERT INTO dim_building (address,wall_material,max_floor,type,processed_dttm,source) VALUES ('Москва, ЗАО, Солнцево, Производственная улица, 17Ас4','монолит',24,'новостройка','2024-09-29 07:14:26','m2');
+INSERT INTO dim_flat_params (floor,rooms,area,furniture,repair,kitchen_furniture,wcs,washing_machine,ceil_height,processed_dttm,source) VALUES (19,0.5,26.0,1.0,'Дизайнерский',1.0,1,1.0,2.7,'2024-09-29 07:14:26','m2');
+INSERT INTO dim_flat_params (floor,rooms,area,furniture,repair,kitchen_furniture,wcs,washing_machine,ceil_height,processed_dttm,source) VALUES (18,0.5,22.0,NULL,NULL,NULL,1,NULL,2.73,'2024-09-29 07:14:26','m2');
+INSERT INTO dim_geo (lat,lon,processed_dttm,source) VALUES (55.749152,37.518695,'2024-09-29 07:14:26','dadata');
+INSERT INTO dim_geo (lat,lon,processed_dttm,source) VALUES (55.643221,37.380103,'2024-09-29 07:14:26','dadata');
+[2024-09-29T07:14:31.233+0000] {base.py:73} INFO - Using connection ID 'postgres_conn' for task execution.
+[2024-09-29T07:14:31.549+0000] {base.py:73} INFO - Using connection ID 'postgres_conn' for task execution.
+[2024-09-29T07:14:31.905+0000] {sql.py:418} INFO - Running statement: INSERT INTO dim_text (description,processed_dttm,source) VALUES ('Квартира на набережной реки! Видовая дизайнерская студия с новым качественным ремонтом, укомплектованная всей необходимой мебелью и техникой в ЖК "Западный порт". Вся инфраструктура - рестораны, кафе, химчистка, аптека, фитнес, супермаркет.
+Хорошая транспортная доступность, метро Фили 5 минут пешком, до делового центра Москва-Сити 10 мин. на авто.
+Закрытая охраняемая территория, круглосуточное видеонаблюдение. Подземный паркинг. Вход и въезд строго через охрану и по пропускам.
+Солнечная квартира с видом на Москва Сити.
+Агентствам и Брокерам без клиента просьба не беспокоить!','2024-09-29 07:14:26','m2');
+INSERT INTO dim_text (description,processed_dttm,source) VALUES ('Продается квартира-студия общей площадью 22 кв. метров на 18 этаже жилого комплекса “Лучи”.
+Комплекс располагается в 5 минутах ходьбы от станции метро «Солнцево» и в шаговой доступности от железнодорожной станции «Новопеределкино».
+Жилой комплекс комфорт-класса представляет собой 9 монолитных и панельных многоквартирных домов высотой от 6 до 25 этажей. Комплекс “Лучи” благоустроен дворами без автомобилей, современными детскими и спортивными площадками и отапливаемыми подземными паркингами.
+В уютном районе Солнцево, вокруг современного жилого комплекса, вас ждет настоящий комфорт и удобство. Здесь находятся все необходимые социальные объекты: школы, детские сады, культурные центры, магазины и развлекательные заведения. Вы сможете легко пополнить запасы продуктов в ближайших магазинах.','2024-09-29 07:14:26','m2');
+INSERT INTO dim_district (district,processed_dttm,source) VALUES ('ЗАО','2024-09-29 07:14:26','m2');
+INSERT INTO dim_district (district,processed_dttm,source) VALUES ('ЗАО','2024-09-29 07:14:26','m2');
+INSERT INTO dim_metro (metro_station,metro_time,processed_dttm,source) VALUES ('Фили',8,'2024-09-29 07:14:26','m2');
+INSERT INTO dim_metro (metro_station,metro_time,processed_dttm,source) VALUES ('Солнцево',8,'2024-09-29 07:14:26','m2');
+INSERT INTO dim_seller (seller,seller_type,processed_dttm,source) VALUES ('Анастасия Малын','Агент','2024-09-29 07:14:26','m2');
+INSERT INTO dim_seller (seller,seller_type,processed_dttm,source) VALUES (' Группа ЛСР','Застройщик','2024-09-29 07:14:26','m2');
+INSERT INTO dim_advt (active,url,processed_dttm,source) VALUES (1,'https://m2.ru/moskva/nedvizhimost/prodazha-kvartiri-studii-26-m-19-20-etazh-481831b1-e812-4337-a7b4-9bb913ee420c/','2024-09-29 07:14:26','m2');
+INSERT INTO dim_advt (active,url,processed_dttm,source) VALUES (1,'https://m2.ru/moskva/nedvizhimost/prodazha-kvartiri-studii-22-m-18-24-etazh-a36e3b93-1e67-4466-bb5b-34eec21b6032/','2024-09-29 07:14:26','m2');
+INSERT INTO dim_building (address,wall_material,max_floor,type,processed_dttm,source) VALUES ('Москва, ЗАО, Филёвский Парк, Большая Филёвская улица, 3к3','монолит',20,'новостройка','2024-09-29 07:14:26','m2');
+INSERT INTO dim_building (address,wall_material,max_floor,type,processed_dttm,source) VALUES ('Москва, ЗАО, Солнцево, Производственная улица, 17Ас4','монолит',24,'новостройка','2024-09-29 07:14:26','m2');
+INSERT INTO dim_flat_params (floor,rooms,area,furniture,repair,kitchen_furniture,wcs,washing_machine,ceil_height,processed_dttm,source) VALUES (19,0.5,26.0,1.0,'Дизайнерский',1.0,1,1.0,2.7,'2024-09-29 07:14:26','m2');
+INSERT INTO dim_flat_params (floor,rooms,area,furniture,repair,kitchen_furniture,wcs,washing_machine,ceil_height,processed_dttm,source) VALUES (18,0.5,22.0,NULL,NULL,NULL,1,NULL,2.73,'2024-09-29 07:14:26','m2');
+INSERT INTO dim_geo (lat,lon,processed_dttm,source) VALUES (55.749152,37.518695,'2024-09-29 07:14:26','dadata');
+INSERT INTO dim_geo (lat,lon,processed_dttm,source) VALUES (55.643221,37.380103,'2024-09-29 07:14:26','dadata');, parameters: None
+[2024-09-29T07:14:32.031+0000] {sql.py:427} INFO - Rows affected: 1
+[2024-09-29T07:14:32.105+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=flats, task_id=create_dims, execution_date=20240929T071338, start_date=20240929T071431, end_date=20240929T071432
+[2024-09-29T07:14:32.139+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-09-29T07:14:32.160+0000] {taskinstance.py:2776} INFO - 1 downstream tasks scheduled from follow-on schedule check

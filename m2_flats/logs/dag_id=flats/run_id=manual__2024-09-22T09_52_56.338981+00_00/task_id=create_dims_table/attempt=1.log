@@ -1,0 +1,99 @@
+[2024-09-22T09:53:13.111+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flats.create_dims_table manual__2024-09-22T09:52:56.338981+00:00 [queued]>
+[2024-09-22T09:53:13.126+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flats.create_dims_table manual__2024-09-22T09:52:56.338981+00:00 [queued]>
+[2024-09-22T09:53:13.127+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2024-09-22T09:53:13.163+0000] {taskinstance.py:1380} INFO - Executing <Task(PostgresOperator): create_dims_table> on 2024-09-22 09:52:56.338981+00:00
+[2024-09-22T09:53:13.211+0000] {standard_task_runner.py:57} INFO - Started process 533 to run task
+[2024-09-22T09:53:13.215+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flats', 'create_dims_table', 'manual__2024-09-22T09:52:56.338981+00:00', '--job-id', '1016', '--raw', '--subdir', 'DAGS_FOLDER/flats.py', '--cfg-path', '/tmp/tmp_l_w6j04']
+[2024-09-22T09:53:13.228+0000] {standard_task_runner.py:85} INFO - Job 1016: Subtask create_dims_table
+[2024-09-22T09:53:13.408+0000] {task_command.py:415} INFO - Running <TaskInstance: flats.create_dims_table manual__2024-09-22T09:52:56.338981+00:00 [running]> on host 1646e3dc8472
+[2024-09-22T09:53:13.550+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flats' AIRFLOW_CTX_TASK_ID='create_dims_table' AIRFLOW_CTX_EXECUTION_DATE='2024-09-22T09:52:56.338981+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-22T09:52:56.338981+00:00'
+[2024-09-22T09:53:13.563+0000] {sql.py:274} INFO - Executing: 
+    CREATE TABLE IF NOT EXISTS dim_district (
+        id SERIAL PRIMARY KEY,
+        district VARCHAR(20),
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS dim_metro (
+        id SERIAL PRIMARY KEY,
+        metro_station VARCHAR(100),
+        metro_time INTEGER,
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS dim_text (
+        id SERIAL PRIMARY KEY,
+        description TEXT,
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS dim_seller (
+        id SERIAL PRIMARY KEY,
+        seller VARCHAR(50),
+        seller_type VARCHAR(50),
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS dim_advt (
+        id SERIAL PRIMARY KEY,
+        active SMALLINT,
+        url VARCHAR(255),
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS dim_building (
+        id SERIAL PRIMARY KEY,
+        address VARchAR(255),
+        wall_meterial VARCHAR(255),
+        max_floor INTEGER,
+        type VARCHAR(50)
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS dim_geo (
+        id SERIAL PRIMARY KEY,
+        lat DECIMAL,
+        lon DECIMAL,
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS dim_flat_params (
+        id SERIAL PRIMARY KEY,
+        floor INTEGER,
+        rooms INTEGER,
+        area DECIMAL,
+        furniture SMALLINT,
+        repair VARCHAR(50),
+        kitchen_furniture SMALLINT,
+        wcs INTEGER,
+        washing_machine SMALLINT,
+        ceil_height DECIMAL,
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );
+[2024-09-22T09:53:13.602+0000] {base.py:73} INFO - Using connection ID 'postgres_conn' for task execution.
+[2024-09-22T09:53:13.931+0000] {base.py:73} INFO - Using connection ID 'postgres_conn' for task execution.
+[2024-09-22T09:53:14.274+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/operators/sql.py", line 280, in execute
+    output = hook.run(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 385, in run
+    with closing(self.get_conn()) as conn:
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/postgres/hooks/postgres.py", line 154, in get_conn
+    self.conn = psycopg2.connect(**conn_args)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "p-gentle-bar-a2xkd23n.eu-central-1.aws.neon.tech" (52.57.171.9), port 5432 failed: ERROR:  password authentication failed for user 'flat_store_owner'
+
+[2024-09-22T09:53:14.287+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=flats, task_id=create_dims_table, execution_date=20240922T095256, start_date=20240922T095313, end_date=20240922T095314
+[2024-09-22T09:53:14.307+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 1016 for task create_dims_table (connection to server at "p-gentle-bar-a2xkd23n.eu-central-1.aws.neon.tech" (52.57.171.9), port 5432 failed: ERROR:  password authentication failed for user 'flat_store_owner'
+; 533)
+[2024-09-22T09:53:14.321+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-09-22T09:53:14.361+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

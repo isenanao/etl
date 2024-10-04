@@ -1,0 +1,156 @@
+[2024-09-22T10:22:04.990+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flats.create_dims_table manual__2024-09-22T10:21:43.822724+00:00 [queued]>
+[2024-09-22T10:22:05.006+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flats.create_dims_table manual__2024-09-22T10:21:43.822724+00:00 [queued]>
+[2024-09-22T10:22:05.008+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2024-09-22T10:22:05.029+0000] {taskinstance.py:1380} INFO - Executing <Task(PostgresOperator): create_dims_table> on 2024-09-22 10:21:43.822724+00:00
+[2024-09-22T10:22:05.042+0000] {standard_task_runner.py:57} INFO - Started process 1050 to run task
+[2024-09-22T10:22:05.048+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flats', 'create_dims_table', 'manual__2024-09-22T10:21:43.822724+00:00', '--job-id', '1033', '--raw', '--subdir', 'DAGS_FOLDER/flats.py', '--cfg-path', '/tmp/tmpvw0zt3d1']
+[2024-09-22T10:22:05.054+0000] {standard_task_runner.py:85} INFO - Job 1033: Subtask create_dims_table
+[2024-09-22T10:22:05.122+0000] {task_command.py:415} INFO - Running <TaskInstance: flats.create_dims_table manual__2024-09-22T10:21:43.822724+00:00 [running]> on host 1646e3dc8472
+[2024-09-22T10:22:05.474+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flats' AIRFLOW_CTX_TASK_ID='create_dims_table' AIRFLOW_CTX_EXECUTION_DATE='2024-09-22T10:21:43.822724+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-22T10:21:43.822724+00:00'
+[2024-09-22T10:22:05.491+0000] {sql.py:274} INFO - Executing: 
+    CREATE TABLE IF NOT EXISTS dim_district (
+        id SERIAL PRIMARY KEY,
+        district VARCHAR(20),
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS dim_metro (
+        id SERIAL PRIMARY KEY,
+        metro_station VARCHAR(100),
+        metro_time INTEGER,
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS dim_text (
+        id SERIAL PRIMARY KEY,
+        description TEXT,
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS dim_seller (
+        id SERIAL PRIMARY KEY,
+        seller VARCHAR(50),
+        seller_type VARCHAR(50),
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS dim_advt (
+        id SERIAL PRIMARY KEY,
+        active SMALLINT,
+        url VARCHAR(255),
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS dim_building (
+        id SERIAL PRIMARY KEY,
+        address VARCHsAR(255),
+        wall_meterial VARCHAR(255),
+        max_floor INTEGER,
+        type VARCHAR(50),
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS dim_geo (
+        id SERIAL PRIMARY KEY,
+        lat DECIMAL,
+        lon DECIMAL,
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS dim_flat_params (
+        id SERIAL PRIMARY KEY,
+        floor INTEGER,
+        rooms INTEGER,
+        area DECIMAL,
+        furniture SMALLINT,
+        repair VARCHAR(50),
+        kitchen_furniture SMALLINT,
+        wcs INTEGER,
+        washing_machine SMALLINT,
+        ceil_height DECIMAL,
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );
+[2024-09-22T10:22:05.513+0000] {base.py:73} INFO - Using connection ID 'postgres_conn' for task execution.
+[2024-09-22T10:22:05.794+0000] {base.py:73} INFO - Using connection ID 'postgres_conn' for task execution.
+[2024-09-22T10:22:06.180+0000] {sql.py:418} INFO - Running statement: 
+    CREATE TABLE IF NOT EXISTS dim_district (
+        id SERIAL PRIMARY KEY,
+        district VARCHAR(20),
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS dim_metro (
+        id SERIAL PRIMARY KEY,
+        metro_station VARCHAR(100),
+        metro_time INTEGER,
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS dim_text (
+        id SERIAL PRIMARY KEY,
+        description TEXT,
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS dim_seller (
+        id SERIAL PRIMARY KEY,
+        seller VARCHAR(50),
+        seller_type VARCHAR(50),
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS dim_advt (
+        id SERIAL PRIMARY KEY,
+        active SMALLINT,
+        url VARCHAR(255),
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS dim_building (
+        id SERIAL PRIMARY KEY,
+        address VARCHsAR(255),
+        wall_meterial VARCHAR(255),
+        max_floor INTEGER,
+        type VARCHAR(50),
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS dim_geo (
+        id SERIAL PRIMARY KEY,
+        lat DECIMAL,
+        lon DECIMAL,
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS dim_flat_params (
+        id SERIAL PRIMARY KEY,
+        floor INTEGER,
+        rooms INTEGER,
+        area DECIMAL,
+        furniture SMALLINT,
+        repair VARCHAR(50),
+        kitchen_furniture SMALLINT,
+        wcs INTEGER,
+        washing_machine SMALLINT,
+        ceil_height DECIMAL,
+        processed_dttm DATE NOT NULL,
+        source VARCHAR(20) NOT NULL
+    );, parameters: None
+[2024-09-22T10:22:06.383+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=flats, task_id=create_dims_table, execution_date=20240922T102143, start_date=20240922T102204, end_date=20240922T102206
+[2024-09-22T10:22:06.412+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-09-22T10:22:06.458+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

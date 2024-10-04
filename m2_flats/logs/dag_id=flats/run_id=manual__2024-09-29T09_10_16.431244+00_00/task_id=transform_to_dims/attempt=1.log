@@ -1,0 +1,28 @@
+[2024-09-29T09:11:34.354+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flats.transform_to_dims manual__2024-09-29T09:10:16.431244+00:00 [queued]>
+[2024-09-29T09:11:34.381+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flats.transform_to_dims manual__2024-09-29T09:10:16.431244+00:00 [queued]>
+[2024-09-29T09:11:34.382+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2024-09-29T09:11:34.421+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): transform_to_dims> on 2024-09-29 09:10:16.431244+00:00
+[2024-09-29T09:11:34.440+0000] {standard_task_runner.py:57} INFO - Started process 250 to run task
+[2024-09-29T09:11:34.450+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flats', 'transform_to_dims', 'manual__2024-09-29T09:10:16.431244+00:00', '--job-id', '217', '--raw', '--subdir', 'DAGS_FOLDER/flats.py', '--cfg-path', '/tmp/tmpfzkk6jgb']
+[2024-09-29T09:11:34.457+0000] {standard_task_runner.py:85} INFO - Job 217: Subtask transform_to_dims
+[2024-09-29T09:11:34.594+0000] {task_command.py:415} INFO - Running <TaskInstance: flats.transform_to_dims manual__2024-09-29T09:10:16.431244+00:00 [running]> on host 5096eb060c49
+[2024-09-29T09:11:34.911+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flats' AIRFLOW_CTX_TASK_ID='transform_to_dims' AIRFLOW_CTX_EXECUTION_DATE='2024-09-29T09:10:16.431244+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-29T09:10:16.431244+00:00'
+[2024-09-29T09:11:35.035+0000] {logging_mixin.py:151} WARNING - /opt/***/dags/etl.py:167 SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2024-09-29T09:11:35.042+0000] {logging_mixin.py:151} WARNING - /opt/***/dags/etl.py:168 SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2024-09-29T09:11:35.377+0000] {logging_mixin.py:151} WARNING - /opt/***/dags/etl.py:217 SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2024-09-29T09:11:35.415+0000] {python.py:194} INFO - Done. Returned value was: None
+[2024-09-29T09:11:35.442+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=flats, task_id=transform_to_dims, execution_date=20240929T091016, start_date=20240929T091134, end_date=20240929T091135
+[2024-09-29T09:11:35.508+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-09-29T09:11:35.559+0000] {taskinstance.py:2776} INFO - 1 downstream tasks scheduled from follow-on schedule check

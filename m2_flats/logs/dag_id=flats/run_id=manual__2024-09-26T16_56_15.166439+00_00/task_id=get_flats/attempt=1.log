@@ -1,0 +1,13 @@
+[2024-09-26T16:56:27.085+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flats.get_flats manual__2024-09-26T16:56:15.166439+00:00 [queued]>
+[2024-09-26T16:56:27.100+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flats.get_flats manual__2024-09-26T16:56:15.166439+00:00 [queued]>
+[2024-09-26T16:56:27.101+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2024-09-26T16:56:27.120+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): get_flats> on 2024-09-26 16:56:15.166439+00:00
+[2024-09-26T16:56:27.127+0000] {standard_task_runner.py:57} INFO - Started process 710 to run task
+[2024-09-26T16:56:27.132+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flats', 'get_flats', 'manual__2024-09-26T16:56:15.166439+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/flats.py', '--cfg-path', '/tmp/tmpiz5kft6s']
+[2024-09-26T16:56:27.141+0000] {standard_task_runner.py:85} INFO - Job 24: Subtask get_flats
+[2024-09-26T16:56:27.228+0000] {task_command.py:415} INFO - Running <TaskInstance: flats.get_flats manual__2024-09-26T16:56:15.166439+00:00 [running]> on host 5096eb060c49
+[2024-09-26T16:56:27.309+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flats' AIRFLOW_CTX_TASK_ID='get_flats' AIRFLOW_CTX_EXECUTION_DATE='2024-09-26T16:56:15.166439+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-26T16:56:15.166439+00:00'
+[2024-09-26T16:56:29.651+0000] {python.py:194} INFO - Done. Returned value was: None
+[2024-09-26T16:56:29.659+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=flats, task_id=get_flats, execution_date=20240926T165615, start_date=20240926T165627, end_date=20240926T165629
+[2024-09-26T16:56:29.718+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-09-26T16:56:29.746+0000] {taskinstance.py:2776} INFO - 1 downstream tasks scheduled from follow-on schedule check

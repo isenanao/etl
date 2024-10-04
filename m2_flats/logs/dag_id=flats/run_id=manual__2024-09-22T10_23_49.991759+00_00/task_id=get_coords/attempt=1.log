@@ -1,0 +1,52 @@
+[2024-09-22T10:24:43.301+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flats.get_coords manual__2024-09-22T10:23:49.991759+00:00 [queued]>
+[2024-09-22T10:24:43.314+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flats.get_coords manual__2024-09-22T10:23:49.991759+00:00 [queued]>
+[2024-09-22T10:24:43.315+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2024-09-22T10:24:43.330+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): get_coords> on 2024-09-22 10:23:49.991759+00:00
+[2024-09-22T10:24:43.336+0000] {standard_task_runner.py:57} INFO - Started process 1158 to run task
+[2024-09-22T10:24:43.339+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flats', 'get_coords', 'manual__2024-09-22T10:23:49.991759+00:00', '--job-id', '1041', '--raw', '--subdir', 'DAGS_FOLDER/flats.py', '--cfg-path', '/tmp/tmppozst_nv']
+[2024-09-22T10:24:43.341+0000] {standard_task_runner.py:85} INFO - Job 1041: Subtask get_coords
+[2024-09-22T10:24:43.394+0000] {task_command.py:415} INFO - Running <TaskInstance: flats.get_coords manual__2024-09-22T10:23:49.991759+00:00 [running]> on host 1646e3dc8472
+[2024-09-22T10:24:43.481+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flats' AIRFLOW_CTX_TASK_ID='get_coords' AIRFLOW_CTX_EXECUTION_DATE='2024-09-22T10:23:49.991759+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-22T10:23:49.991759+00:00'
+[2024-09-22T10:24:43.502+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl.py", line 112, in enrich_coords
+    flats_df["lat"], flats_df["lon"] = zip(*flats_df.apply(get_coords, axis=1))
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/frame.py", line 9423, in apply
+    return op.apply().__finalize__(self, method="apply")
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/apply.py", line 678, in apply
+    return self.apply_standard()
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/apply.py", line 798, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/apply.py", line 814, in apply_series_generator
+    results[i] = self.f(v)
+  File "/opt/airflow/dags/etl.py", line 97, in get_coords
+    result = requests.post(
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/models.py", line 371, in prepare
+    self.prepare_body(data, files, json)
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/models.py", line 511, in prepare_body
+    body = complexjson.dumps(json, allow_nan=False)
+  File "/usr/local/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/usr/local/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/local/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/local/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Series is not JSON serializable
+[2024-09-22T10:24:43.520+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=flats, task_id=get_coords, execution_date=20240922T102349, start_date=20240922T102443, end_date=20240922T102443
+[2024-09-22T10:24:43.532+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 1041 for task get_coords (Object of type Series is not JSON serializable; 1158)
+[2024-09-22T10:24:43.563+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-09-22T10:24:43.592+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

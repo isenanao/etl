@@ -1,0 +1,78 @@
+[2024-09-26T16:58:27.610+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flats.create_dims manual__2024-09-26T16:58:02.792944+00:00 [queued]>
+[2024-09-26T16:58:27.616+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flats.create_dims manual__2024-09-26T16:58:02.792944+00:00 [queued]>
+[2024-09-26T16:58:27.616+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2024-09-26T16:58:27.626+0000] {taskinstance.py:1380} INFO - Executing <Task(PostgresOperator): create_dims> on 2024-09-26 16:58:02.792944+00:00
+[2024-09-26T16:58:27.628+0000] {standard_task_runner.py:57} INFO - Started process 966 to run task
+[2024-09-26T16:58:27.630+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flats', 'create_dims', 'manual__2024-09-26T16:58:02.792944+00:00', '--job-id', '45', '--raw', '--subdir', 'DAGS_FOLDER/flats.py', '--cfg-path', '/tmp/tmp13yd5f9_']
+[2024-09-26T16:58:27.632+0000] {standard_task_runner.py:85} INFO - Job 45: Subtask create_dims
+[2024-09-26T16:58:27.661+0000] {task_command.py:415} INFO - Running <TaskInstance: flats.create_dims manual__2024-09-26T16:58:02.792944+00:00 [running]> on host 5096eb060c49
+[2024-09-26T16:58:27.702+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flats' AIRFLOW_CTX_TASK_ID='create_dims' AIRFLOW_CTX_EXECUTION_DATE='2024-09-26T16:58:02.792944+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-26T16:58:02.792944+00:00'
+[2024-09-26T16:58:27.703+0000] {sql.py:274} INFO - Executing: INSERT INTO dim_text (description,processed_dttm,source) VALUES 'Квартира на набережной реки! Видовая дизайнерская студия с новым качественным ремонтом, укомплектованная всей необходимой мебелью и техникой в ЖК "Западный порт". Вся инфраструктура - рестораны, кафе, химчистка, аптека, фитнес, супермаркет.
+Хорошая транспортная доступность, метро Фили 5 минут пешком, до делового центра Москва-Сити 10 мин. на авто.
+Закрытая охраняемая территория, круглосуточное видеонаблюдение. Подземный паркинг. Вход и въезд строго через охрану и по пропускам.
+Солнечная квартира с видом на Москва Сити.
+Агентствам и Брокерам без клиента просьба не беспокоить!','2024-09-26 16:58:24','m2';
+INSERT INTO dim_text (description,processed_dttm,source) VALUES 'Апартаменты не относятся к жилому фонду, но имеют необходимые условия для проживания. В апартаментах нельзя оформить регистрацию по месту жительства. Такие квартиры дешевле, но коммунальные платежи выше.','2024-09-26 16:58:24','m2';
+INSERT INTO dim_district (district,processed_dttm,source) VALUES 'ЗАО','2024-09-26 16:58:24','m2';
+INSERT INTO dim_district (district,processed_dttm,source) VALUES 'ЮВАО','2024-09-26 16:58:24','m2';
+INSERT INTO dim_metro (metro_station,metro_time,processed_dttm,source) VALUES 'Фили',8,'2024-09-26 16:58:24','m2';
+INSERT INTO dim_metro (metro_station,metro_time,processed_dttm,source) VALUES 'Калитники',8,'2024-09-26 16:58:24','m2';
+INSERT INTO dim_seller (seller,seller_type,processed_dttm,source) VALUES 'Анастасия Малын','Агент','2024-09-26 16:58:24','m2';
+INSERT INTO dim_seller (seller,seller_type,processed_dttm,source) VALUES ' Колди (Coldy)','Застройщик','2024-09-26 16:58:24','m2';
+INSERT INTO dim_advt (active,url,processed_dttm,source) VALUES 1,'https://m2.ru/moskva/nedvizhimost/prodazha-kvartiri-studii-26-m-19-20-etazh-481831b1-e812-4337-a7b4-9bb913ee420c/','2024-09-26 16:58:24','m2';
+INSERT INTO dim_advt (active,url,processed_dttm,source) VALUES 1,'https://m2.ru/moskva/nedvizhimost/prodazha-kvartiri-studii-22-1-m-9-21-etazh-100a9fd3-8fbb-400b-8855-988aeff85c47/','2024-09-26 16:58:24','m2';
+INSERT INTO dim_building (address,wall_material,max_floor,type,processed_dttm,source) VALUES 'Москва, ЗАО, Филёвский Парк, Большая Филёвская улица, 3к3','монолит',20,'новостройка','2024-09-26 16:58:24','m2';
+INSERT INTO dim_building (address,wall_material,max_floor,type,processed_dttm,source) VALUES 'Москва, ЮВАО, Нижегородский район, Автомобильный проезд, 4','монолит',21,'новостройка','2024-09-26 16:58:24','m2';
+INSERT INTO dim_flat_params (floor,rooms,area,furniture,repair,kitchen_furniture,wcs,washing_machine,ceil_height,processed_dttm,source) VALUES 19,0.5,26.0,1.0,'Дизайнерский',1.0,1.0,1.0,2.7,'2024-09-26 16:58:24','m2';
+INSERT INTO dim_flat_params (floor,rooms,area,furniture,repair,kitchen_furniture,wcs,washing_machine,ceil_height,processed_dttm,source) VALUES 9,0.5,22.1,nan,nan,nan,nan,nan,3.0,'2024-09-26 16:58:24','m2';
+INSERT INTO dim_geo (lat,lon,processed_dttm,source) VALUES 55.749152,37.518695,'2024-09-26 16:58:24','dadata';
+INSERT INTO dim_geo (lat,lon,processed_dttm,source) VALUES 55.7301671,37.6983171,'2024-09-26 16:58:24','dadata';
+[2024-09-26T16:58:27.711+0000] {base.py:73} INFO - Using connection ID 'postgres_conn' for task execution.
+[2024-09-26T16:58:27.904+0000] {base.py:73} INFO - Using connection ID 'postgres_conn' for task execution.
+[2024-09-26T16:58:28.181+0000] {sql.py:418} INFO - Running statement: INSERT INTO dim_text (description,processed_dttm,source) VALUES 'Квартира на набережной реки! Видовая дизайнерская студия с новым качественным ремонтом, укомплектованная всей необходимой мебелью и техникой в ЖК "Западный порт". Вся инфраструктура - рестораны, кафе, химчистка, аптека, фитнес, супермаркет.
+Хорошая транспортная доступность, метро Фили 5 минут пешком, до делового центра Москва-Сити 10 мин. на авто.
+Закрытая охраняемая территория, круглосуточное видеонаблюдение. Подземный паркинг. Вход и въезд строго через охрану и по пропускам.
+Солнечная квартира с видом на Москва Сити.
+Агентствам и Брокерам без клиента просьба не беспокоить!','2024-09-26 16:58:24','m2';
+INSERT INTO dim_text (description,processed_dttm,source) VALUES 'Апартаменты не относятся к жилому фонду, но имеют необходимые условия для проживания. В апартаментах нельзя оформить регистрацию по месту жительства. Такие квартиры дешевле, но коммунальные платежи выше.','2024-09-26 16:58:24','m2';
+INSERT INTO dim_district (district,processed_dttm,source) VALUES 'ЗАО','2024-09-26 16:58:24','m2';
+INSERT INTO dim_district (district,processed_dttm,source) VALUES 'ЮВАО','2024-09-26 16:58:24','m2';
+INSERT INTO dim_metro (metro_station,metro_time,processed_dttm,source) VALUES 'Фили',8,'2024-09-26 16:58:24','m2';
+INSERT INTO dim_metro (metro_station,metro_time,processed_dttm,source) VALUES 'Калитники',8,'2024-09-26 16:58:24','m2';
+INSERT INTO dim_seller (seller,seller_type,processed_dttm,source) VALUES 'Анастасия Малын','Агент','2024-09-26 16:58:24','m2';
+INSERT INTO dim_seller (seller,seller_type,processed_dttm,source) VALUES ' Колди (Coldy)','Застройщик','2024-09-26 16:58:24','m2';
+INSERT INTO dim_advt (active,url,processed_dttm,source) VALUES 1,'https://m2.ru/moskva/nedvizhimost/prodazha-kvartiri-studii-26-m-19-20-etazh-481831b1-e812-4337-a7b4-9bb913ee420c/','2024-09-26 16:58:24','m2';
+INSERT INTO dim_advt (active,url,processed_dttm,source) VALUES 1,'https://m2.ru/moskva/nedvizhimost/prodazha-kvartiri-studii-22-1-m-9-21-etazh-100a9fd3-8fbb-400b-8855-988aeff85c47/','2024-09-26 16:58:24','m2';
+INSERT INTO dim_building (address,wall_material,max_floor,type,processed_dttm,source) VALUES 'Москва, ЗАО, Филёвский Парк, Большая Филёвская улица, 3к3','монолит',20,'новостройка','2024-09-26 16:58:24','m2';
+INSERT INTO dim_building (address,wall_material,max_floor,type,processed_dttm,source) VALUES 'Москва, ЮВАО, Нижегородский район, Автомобильный проезд, 4','монолит',21,'новостройка','2024-09-26 16:58:24','m2';
+INSERT INTO dim_flat_params (floor,rooms,area,furniture,repair,kitchen_furniture,wcs,washing_machine,ceil_height,processed_dttm,source) VALUES 19,0.5,26.0,1.0,'Дизайнерский',1.0,1.0,1.0,2.7,'2024-09-26 16:58:24','m2';
+INSERT INTO dim_flat_params (floor,rooms,area,furniture,repair,kitchen_furniture,wcs,washing_machine,ceil_height,processed_dttm,source) VALUES 9,0.5,22.1,nan,nan,nan,nan,nan,3.0,'2024-09-26 16:58:24','m2';
+INSERT INTO dim_geo (lat,lon,processed_dttm,source) VALUES 55.749152,37.518695,'2024-09-26 16:58:24','dadata';
+INSERT INTO dim_geo (lat,lon,processed_dttm,source) VALUES 55.7301671,37.6983171,'2024-09-26 16:58:24','dadata';, parameters: None
+[2024-09-26T16:58:28.272+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/operators/sql.py", line 280, in execute
+    output = hook.run(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 392, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 423, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.SyntaxError: syntax error at or near "'Квартира на набережной реки! Видовая дизайнерская студия с новым качественным ремонтом, укомплектованная всей необходимой мебелью и техникой в ЖК "Западный порт". Вся инфраструктура - рестораны, кафе, химчистка, аптека, фитнес, супермаркет.
+Хорошая транспортная доступность, метро Фили 5 минут пешком, до делового центра Москва-Сити 10 мин. на авто.
+Закрытая охраняемая территория, круглосуточное видеонаблюдение. Подземный паркинг. Вход и въезд строго через охрану и по пропускам.
+Солнечная квартира с видом на Москва Сити.
+Агентствам и Брокерам без клиента просьба не беспокоить!'"
+LINE 1: ...m_text (description,processed_dttm,source) VALUES 'Квартира ...
+                                                             ^
+
+[2024-09-26T16:58:28.286+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=flats, task_id=create_dims, execution_date=20240926T165802, start_date=20240926T165827, end_date=20240926T165828
+[2024-09-26T16:58:28.299+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 45 for task create_dims (syntax error at or near "'Квартира на набережной реки! Видовая дизайнерская студия с новым качественным ремонтом, укомплектованная всей необходимой мебелью и техникой в ЖК "Западный порт". Вся инфраструктура - рестораны, кафе, химчистка, аптека, фитнес, супермаркет.
+Хорошая транспортная доступность, метро Фили 5 минут пешком, до делового центра Москва-Сити 10 мин. на авто.
+Закрытая охраняемая территория, круглосуточное видеонаблюдение. Подземный паркинг. Вход и въезд строго через охрану и по пропускам.
+Солнечная квартира с видом на Москва Сити.
+Агентствам и Брокерам без клиента просьба не беспокоить!'"
+LINE 1: ...m_text (description,processed_dttm,source) VALUES 'Квартира ...
+                                                             ^
+; 966)
+[2024-09-26T16:58:28.319+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-09-26T16:58:28.337+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

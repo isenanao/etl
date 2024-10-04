@@ -1,0 +1,19 @@
+[2024-09-29T07:14:36.660+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flats.create_facts manual__2024-09-29T07:13:38.511524+00:00 [queued]>
+[2024-09-29T07:14:36.671+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flats.create_facts manual__2024-09-29T07:13:38.511524+00:00 [queued]>
+[2024-09-29T07:14:36.672+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2024-09-29T07:14:36.689+0000] {taskinstance.py:1380} INFO - Executing <Task(PostgresOperator): create_facts> on 2024-09-29 07:13:38.511524+00:00
+[2024-09-29T07:14:36.694+0000] {standard_task_runner.py:57} INFO - Started process 6199 to run task
+[2024-09-29T07:14:36.700+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flats', 'create_facts', 'manual__2024-09-29T07:13:38.511524+00:00', '--job-id', '149', '--raw', '--subdir', 'DAGS_FOLDER/flats.py', '--cfg-path', '/tmp/tmpzkpaighn']
+[2024-09-29T07:14:36.703+0000] {standard_task_runner.py:85} INFO - Job 149: Subtask create_facts
+[2024-09-29T07:14:36.764+0000] {task_command.py:415} INFO - Running <TaskInstance: flats.create_facts manual__2024-09-29T07:13:38.511524+00:00 [running]> on host 5096eb060c49
+[2024-09-29T07:14:37.005+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flats' AIRFLOW_CTX_TASK_ID='create_facts' AIRFLOW_CTX_EXECUTION_DATE='2024-09-29T07:13:38.511524+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-29T07:13:38.511524+00:00'
+[2024-09-29T07:14:37.008+0000] {sql.py:274} INFO - Executing: INSERT INTO fact_flat (price,processed_dttm,source) VALUES (17830000,'2024-09-29 07:14:26','m2');
+INSERT INTO fact_flat (price,processed_dttm,source) VALUES (9518388,'2024-09-29 07:14:26','m2');
+[2024-09-29T07:14:37.026+0000] {base.py:73} INFO - Using connection ID 'postgres_conn' for task execution.
+[2024-09-29T07:14:37.444+0000] {base.py:73} INFO - Using connection ID 'postgres_conn' for task execution.
+[2024-09-29T07:14:37.840+0000] {sql.py:418} INFO - Running statement: INSERT INTO fact_flat (price,processed_dttm,source) VALUES (17830000,'2024-09-29 07:14:26','m2');
+INSERT INTO fact_flat (price,processed_dttm,source) VALUES (9518388,'2024-09-29 07:14:26','m2');, parameters: None
+[2024-09-29T07:14:37.966+0000] {sql.py:427} INFO - Rows affected: 1
+[2024-09-29T07:14:38.047+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=flats, task_id=create_facts, execution_date=20240929T071338, start_date=20240929T071436, end_date=20240929T071438
+[2024-09-29T07:14:38.121+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-09-29T07:14:38.169+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,64 @@
+[2024-09-22T10:47:40.356+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flats.create_dims manual__2024-09-22T10:46:56.063483+00:00 [queued]>
+[2024-09-22T10:47:40.372+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flats.create_dims manual__2024-09-22T10:46:56.063483+00:00 [queued]>
+[2024-09-22T10:47:40.372+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2024-09-22T10:47:40.387+0000] {taskinstance.py:1380} INFO - Executing <Task(PostgresOperator): create_dims> on 2024-09-22 10:46:56.063483+00:00
+[2024-09-22T10:47:40.396+0000] {standard_task_runner.py:57} INFO - Started process 2136 to run task
+[2024-09-22T10:47:40.401+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flats', 'create_dims', 'manual__2024-09-22T10:46:56.063483+00:00', '--job-id', '1105', '--raw', '--subdir', 'DAGS_FOLDER/flats.py', '--cfg-path', '/tmp/tmprlcqkk9c']
+[2024-09-22T10:47:40.404+0000] {standard_task_runner.py:85} INFO - Job 1105: Subtask create_dims
+[2024-09-22T10:47:40.463+0000] {task_command.py:415} INFO - Running <TaskInstance: flats.create_dims manual__2024-09-22T10:46:56.063483+00:00 [running]> on host 1646e3dc8472
+[2024-09-22T10:47:40.543+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flats' AIRFLOW_CTX_TASK_ID='create_dims' AIRFLOW_CTX_EXECUTION_DATE='2024-09-22T10:46:56.063483+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-22T10:46:56.063483+00:00'
+[2024-09-22T10:47:40.544+0000] {sql.py:274} INFO - Executing: INSERT INTO dim_text (description,processed_dttm,source) VALUES ('Просторная 2-комнатная квартира (54 кв.м.) на 3 этаже кирпичного 3-этажного дома 1960 года постройки по индивидуальному проекту.\nДом под реновацию 1 очереди (2019-2024гг.), переселение в плане в 2025 году. Есть возможность выбора квартир и увеличения площади за доплату в момент переезда!\nДве жилые комнаты: 17,6 (кв.м) и 13,5 (кв.м). Кухня-7 кв.м. Много мест для хранения: есть отдельная кладовая и антресоль. Квартира - светлая, теплая, уютная. Ремонт косметический. Высота потолков 3 м.\nПланировка - линейная, все окна выходят на южную сторону, обратную от подъездов. Дом кирпичный, с прекрасной звукоизоляцией - толстые стены, зимой тепло, а летом комфортно даже без кондиционера. Установлены стеклопакеты. Раздельный санузел, установлена стиральная машинка. Возможность покупки квартиры с мебелью.\nАккуратный подъезд, домофон. Приятные и тихие соседи.\nШирокие лестничные пролеты. На этаже 4 квартиры.\nДом удачно расположен , вся инфраструктура в пешей доступности.\nДве современных спортивных площадки с покрытием во дворе: баскетбольная и игровая.\nЗеленая городская среда прекрасно оборудована зонами отдыха и аллеями для прогулок . Шикарный сосновый лес рядом.\nМагазины, аптеки, поликлиника, фитнес центр, школа, 2 детских сада.\nДо станции МЦД-4 Кокошкино 5 минут пешком, электрички отправляются с интервалом 5-10 минут.\nКвартира идеальна для инвесторов. Устойчивый спрос под сдачу в наем и высокая рентабельность вложений.', '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_text (description,processed_dttm,source) VALUES ('Апартаменты не относятся к жилому фонду, но имеют необходимые условия для проживания. В апартаментах нельзя оформить регистрацию по месту жительства. Такие квартиры дешевле, но коммунальные платежи выше.', '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_district (district,processed_dttm,source) VALUES ('Новая Москва', '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_district (district,processed_dttm,source) VALUES ('ЮВАО', '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_metro (metro_station,metro_time,processed_dttm,source) VALUES ('Солнцево', 40, '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_metro (metro_station,metro_time,processed_dttm,source) VALUES ('Калитники', 8, '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_seller (seller,seller_type,processed_dttm,source) VALUES (' Наталья', 'Агент', '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_seller (seller,seller_type,processed_dttm,source) VALUES (' Колди (Coldy)', 'Застройщик', '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_advt (active,url,processed_dttm,source) VALUES (True, 'https://m2.ru/moskva/nedvizhimost/prodazha-2-komnatnoi-kvartiri-54-m-3-3-etazh-a95eb1f4-096e-4fe5-b917-2950d4ed823c/', '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_advt (active,url,processed_dttm,source) VALUES (True, 'https://m2.ru/moskva/nedvizhimost/prodazha-2-komnatnoi-kvartiri-52-4-m-7-21-etazh-3267aefd-4076-45bd-95ea-6a7c2f2234ae/', '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_building (address,wall_material,max_floor,type,processed_dttm,source) VALUES ('Москва, Новая Москва, дачный посёлок Кокошкино, НМАО, улица Ленина, 4', 'кирпич', 3, 'новостройка', '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_building (address,wall_material,max_floor,type,processed_dttm,source) VALUES ('Москва, ЮВАО, Нижегородский район, Автомобильный проезд, 4', 'монолит', 21, 'новостройка', '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_flat_params (floor,rooms,area,furniture,repair,kitchen_furniture,wcs,washing_machine,ceil_height,processed_dttm,source) VALUES (3, 2, 54.0, 0.0, 'Нужен ремонт', 1.0, 1.0, 1.0, 3.0, '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_flat_params (floor,rooms,area,furniture,repair,kitchen_furniture,wcs,washing_machine,ceil_height,processed_dttm,source) VALUES (7, 2, 52.4, nan, nan, nan, nan, nan, 3.0, '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_geo (lat,lon,processed_dttm,source) VALUES (55.6013911, 37.1665538, '2024-09-22 10:47:34', 'dadata');
+INSERT INTO dim_geo (lat,lon,processed_dttm,source) VALUES (55.7301671, 37.6983171, '2024-09-22 10:47:34', 'dadata');
+[2024-09-22T10:47:40.554+0000] {base.py:73} INFO - Using connection ID 'postgres_conn' for task execution.
+[2024-09-22T10:47:40.805+0000] {base.py:73} INFO - Using connection ID 'postgres_conn' for task execution.
+[2024-09-22T10:47:41.141+0000] {sql.py:418} INFO - Running statement: INSERT INTO dim_text (description,processed_dttm,source) VALUES ('Просторная 2-комнатная квартира (54 кв.м.) на 3 этаже кирпичного 3-этажного дома 1960 года постройки по индивидуальному проекту.\nДом под реновацию 1 очереди (2019-2024гг.), переселение в плане в 2025 году. Есть возможность выбора квартир и увеличения площади за доплату в момент переезда!\nДве жилые комнаты: 17,6 (кв.м) и 13,5 (кв.м). Кухня-7 кв.м. Много мест для хранения: есть отдельная кладовая и антресоль. Квартира - светлая, теплая, уютная. Ремонт косметический. Высота потолков 3 м.\nПланировка - линейная, все окна выходят на южную сторону, обратную от подъездов. Дом кирпичный, с прекрасной звукоизоляцией - толстые стены, зимой тепло, а летом комфортно даже без кондиционера. Установлены стеклопакеты. Раздельный санузел, установлена стиральная машинка. Возможность покупки квартиры с мебелью.\nАккуратный подъезд, домофон. Приятные и тихие соседи.\nШирокие лестничные пролеты. На этаже 4 квартиры.\nДом удачно расположен , вся инфраструктура в пешей доступности.\nДве современных спортивных площадки с покрытием во дворе: баскетбольная и игровая.\nЗеленая городская среда прекрасно оборудована зонами отдыха и аллеями для прогулок . Шикарный сосновый лес рядом.\nМагазины, аптеки, поликлиника, фитнес центр, школа, 2 детских сада.\nДо станции МЦД-4 Кокошкино 5 минут пешком, электрички отправляются с интервалом 5-10 минут.\nКвартира идеальна для инвесторов. Устойчивый спрос под сдачу в наем и высокая рентабельность вложений.', '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_text (description,processed_dttm,source) VALUES ('Апартаменты не относятся к жилому фонду, но имеют необходимые условия для проживания. В апартаментах нельзя оформить регистрацию по месту жительства. Такие квартиры дешевле, но коммунальные платежи выше.', '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_district (district,processed_dttm,source) VALUES ('Новая Москва', '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_district (district,processed_dttm,source) VALUES ('ЮВАО', '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_metro (metro_station,metro_time,processed_dttm,source) VALUES ('Солнцево', 40, '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_metro (metro_station,metro_time,processed_dttm,source) VALUES ('Калитники', 8, '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_seller (seller,seller_type,processed_dttm,source) VALUES (' Наталья', 'Агент', '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_seller (seller,seller_type,processed_dttm,source) VALUES (' Колди (Coldy)', 'Застройщик', '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_advt (active,url,processed_dttm,source) VALUES (True, 'https://m2.ru/moskva/nedvizhimost/prodazha-2-komnatnoi-kvartiri-54-m-3-3-etazh-a95eb1f4-096e-4fe5-b917-2950d4ed823c/', '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_advt (active,url,processed_dttm,source) VALUES (True, 'https://m2.ru/moskva/nedvizhimost/prodazha-2-komnatnoi-kvartiri-52-4-m-7-21-etazh-3267aefd-4076-45bd-95ea-6a7c2f2234ae/', '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_building (address,wall_material,max_floor,type,processed_dttm,source) VALUES ('Москва, Новая Москва, дачный посёлок Кокошкино, НМАО, улица Ленина, 4', 'кирпич', 3, 'новостройка', '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_building (address,wall_material,max_floor,type,processed_dttm,source) VALUES ('Москва, ЮВАО, Нижегородский район, Автомобильный проезд, 4', 'монолит', 21, 'новостройка', '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_flat_params (floor,rooms,area,furniture,repair,kitchen_furniture,wcs,washing_machine,ceil_height,processed_dttm,source) VALUES (3, 2, 54.0, 0.0, 'Нужен ремонт', 1.0, 1.0, 1.0, 3.0, '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_flat_params (floor,rooms,area,furniture,repair,kitchen_furniture,wcs,washing_machine,ceil_height,processed_dttm,source) VALUES (7, 2, 52.4, nan, nan, nan, nan, nan, 3.0, '2024-09-22 10:47:34', 'm2');
+INSERT INTO dim_geo (lat,lon,processed_dttm,source) VALUES (55.6013911, 37.1665538, '2024-09-22 10:47:34', 'dadata');
+INSERT INTO dim_geo (lat,lon,processed_dttm,source) VALUES (55.7301671, 37.6983171, '2024-09-22 10:47:34', 'dadata');, parameters: None
+[2024-09-22T10:47:41.245+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/operators/sql.py", line 280, in execute
+    output = hook.run(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 392, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 423, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.DatatypeMismatch: column "active" is of type smallint but expression is of type boolean
+LINE 9: ...m_advt (active,url,processed_dttm,source) VALUES (True, 'htt...
+                                                             ^
+HINT:  You will need to rewrite or cast the expression.
+
+[2024-09-22T10:47:41.256+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=flats, task_id=create_dims, execution_date=20240922T104656, start_date=20240922T104740, end_date=20240922T104741
+[2024-09-22T10:47:41.274+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 1105 for task create_dims (column "active" is of type smallint but expression is of type boolean
+LINE 9: ...m_advt (active,url,processed_dttm,source) VALUES (True, 'htt...
+                                                             ^
+HINT:  You will need to rewrite or cast the expression.
+; 2136)
+[2024-09-22T10:47:41.323+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-09-22T10:47:41.348+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

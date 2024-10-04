@@ -1,0 +1,26 @@
+[2024-09-22T10:34:44.947+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flats.transform_to_dims manual__2024-09-22T10:34:09.239484+00:00 [queued]>
+[2024-09-22T10:34:44.963+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flats.transform_to_dims manual__2024-09-22T10:34:09.239484+00:00 [queued]>
+[2024-09-22T10:34:44.963+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2024-09-22T10:34:44.983+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): transform_to_dims> on 2024-09-22 10:34:09.239484+00:00
+[2024-09-22T10:34:44.991+0000] {standard_task_runner.py:57} INFO - Started process 1514 to run task
+[2024-09-22T10:34:44.997+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flats', 'transform_to_dims', 'manual__2024-09-22T10:34:09.239484+00:00', '--job-id', '1063', '--raw', '--subdir', 'DAGS_FOLDER/flats.py', '--cfg-path', '/tmp/tmpl9uzkc_j']
+[2024-09-22T10:34:45.001+0000] {standard_task_runner.py:85} INFO - Job 1063: Subtask transform_to_dims
+[2024-09-22T10:34:45.100+0000] {task_command.py:415} INFO - Running <TaskInstance: flats.transform_to_dims manual__2024-09-22T10:34:09.239484+00:00 [running]> on host 1646e3dc8472
+[2024-09-22T10:34:45.245+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flats' AIRFLOW_CTX_TASK_ID='transform_to_dims' AIRFLOW_CTX_EXECUTION_DATE='2024-09-22T10:34:09.239484+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-22T10:34:09.239484+00:00'
+[2024-09-22T10:34:45.273+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl.py", line 140, in create_flat_dims
+    df_to_sql('dim_text', dim_text)
+  File "/opt/airflow/dags/etl.py", line 129, in df_to_sql
+    fl.write(f'INSERT INTO {table_name} ({columns}) VALUES ' + str(tuple(record.value.tolist())) + ';\n')
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/generic.py", line 5989, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'Series' object has no attribute 'value'
+[2024-09-22T10:34:45.309+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=flats, task_id=transform_to_dims, execution_date=20240922T103409, start_date=20240922T103444, end_date=20240922T103445
+[2024-09-22T10:34:45.344+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 1063 for task transform_to_dims ('Series' object has no attribute 'value'; 1514)
+[2024-09-22T10:34:45.370+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-09-22T10:34:45.419+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

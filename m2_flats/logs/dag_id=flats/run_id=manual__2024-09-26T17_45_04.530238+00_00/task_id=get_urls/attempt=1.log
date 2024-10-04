@@ -1,0 +1,30 @@
+[2024-09-26T17:45:24.446+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flats.get_urls manual__2024-09-26T17:45:04.530238+00:00 [queued]>
+[2024-09-26T17:45:24.453+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flats.get_urls manual__2024-09-26T17:45:04.530238+00:00 [queued]>
+[2024-09-26T17:45:24.454+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2024-09-26T17:45:24.461+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): get_urls> on 2024-09-26 17:45:04.530238+00:00
+[2024-09-26T17:45:24.464+0000] {standard_task_runner.py:57} INFO - Started process 1285 to run task
+[2024-09-26T17:45:24.466+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flats', 'get_urls', 'manual__2024-09-26T17:45:04.530238+00:00', '--job-id', '109', '--raw', '--subdir', 'DAGS_FOLDER/flats.py', '--cfg-path', '/tmp/tmpjz3zq9y2']
+[2024-09-26T17:45:24.469+0000] {standard_task_runner.py:85} INFO - Job 109: Subtask get_urls
+[2024-09-26T17:45:24.516+0000] {task_command.py:415} INFO - Running <TaskInstance: flats.get_urls manual__2024-09-26T17:45:04.530238+00:00 [running]> on host 5096eb060c49
+[2024-09-26T17:45:24.589+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flats' AIRFLOW_CTX_TASK_ID='get_urls' AIRFLOW_CTX_EXECUTION_DATE='2024-09-26T17:45:04.530238+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-26T17:45:04.530238+00:00'
+[2024-09-26T17:45:24.602+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl.py", line 100, in get_urls
+    df = hook.get_pandas_df(sql="select url from dim_advt;")
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 218, in get_pandas_df
+    with closing(self.get_conn()) as conn:
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/postgres/hooks/postgres.py", line 124, in get_conn
+    conn = deepcopy(self.connection or self.get_connection(conn_id))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/base.py", line 72, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/connection.py", line 477, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `db_conn_id` isn't defined
+[2024-09-26T17:45:24.608+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=flats, task_id=get_urls, execution_date=20240926T174504, start_date=20240926T174524, end_date=20240926T174524
+[2024-09-26T17:45:24.615+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 109 for task get_urls (The conn_id `db_conn_id` isn't defined; 1285)
+[2024-09-26T17:45:24.647+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-09-26T17:45:24.669+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

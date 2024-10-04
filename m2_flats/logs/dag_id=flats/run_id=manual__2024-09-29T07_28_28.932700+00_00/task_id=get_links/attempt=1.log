@@ -1,0 +1,53 @@
+[2024-09-29T07:28:45.726+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flats.get_links manual__2024-09-29T07:28:28.932700+00:00 [queued]>
+[2024-09-29T07:28:45.735+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flats.get_links manual__2024-09-29T07:28:28.932700+00:00 [queued]>
+[2024-09-29T07:28:45.736+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2024-09-29T07:28:45.747+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): get_links> on 2024-09-29 07:28:28.932700+00:00
+[2024-09-29T07:28:45.752+0000] {standard_task_runner.py:57} INFO - Started process 6371 to run task
+[2024-09-29T07:28:45.756+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flats', 'get_links', 'manual__2024-09-29T07:28:28.932700+00:00', '--job-id', '151', '--raw', '--subdir', 'DAGS_FOLDER/flats.py', '--cfg-path', '/tmp/tmph7k5j5bj']
+[2024-09-29T07:28:45.759+0000] {standard_task_runner.py:85} INFO - Job 151: Subtask get_links
+[2024-09-29T07:28:45.811+0000] {task_command.py:415} INFO - Running <TaskInstance: flats.get_links manual__2024-09-29T07:28:28.932700+00:00 [running]> on host 5096eb060c49
+[2024-09-29T07:28:45.938+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flats' AIRFLOW_CTX_TASK_ID='get_links' AIRFLOW_CTX_EXECUTION_DATE='2024-09-29T07:28:28.932700+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-29T07:28:28.932700+00:00'
+[2024-09-29T07:28:48.500+0000] {logging_mixin.py:151} INFO - https://m2.ru/moskva/nedvizhimost/prodazha-kvartiri-studii-26-m-19-20-etazh-481831b1-e812-4337-a7b4-9bb913ee420c/
+[2024-09-29T07:28:48.501+0000] {logging_mixin.py:151} INFO - вторичка
+[2024-09-29T07:28:48.502+0000] {logging_mixin.py:151} INFO - https://m2.ru/moskva/nedvizhimost/prodazha-kvartiri-studii-22-m-18-24-etazh-a36e3b93-1e67-4466-bb5b-34eec21b6032/
+[2024-09-29T07:28:48.502+0000] {logging_mixin.py:151} INFO - новостройка
+[2024-09-29T07:28:48.503+0000] {logging_mixin.py:151} INFO - https://m2.ru/moskva/nedvizhimost/prodazha-1-komnatnoi-kvartiri-40-2-m-8-15-etazh-271ef989-6381-4654-b8fe-d62823eed5b5/
+[2024-09-29T07:28:48.504+0000] {logging_mixin.py:151} INFO - вторичка
+[2024-09-29T07:28:48.504+0000] {logging_mixin.py:151} INFO - https://m2.ru/moskva/nedvizhimost/prodazha-1-komnatnoi-kvartiri-35-8-m-15-24-etazh-8e7cc4ae-1227-40d1-bfc7-97da1965a883/
+[2024-09-29T07:28:48.505+0000] {logging_mixin.py:151} INFO - новостройка
+[2024-09-29T07:28:48.506+0000] {logging_mixin.py:151} INFO - https://m2.ru/moskva/nedvizhimost/prodazha-3-komnatnoi-kvartiri-57-2-m-9-9-etazh-6b744124-020a-4988-997e-d62d1d819573/
+[2024-09-29T07:28:48.506+0000] {logging_mixin.py:151} INFO - вторичка
+[2024-09-29T07:28:48.507+0000] {logging_mixin.py:151} INFO - https://m2.ru/moskva/nedvizhimost/prodazha-kvartiri-studii-22-9-m-18-24-etazh-90540126-12ff-481e-ba04-9cf9d66fef46/
+[2024-09-29T07:28:48.507+0000] {logging_mixin.py:151} INFO - новостройка
+[2024-09-29T07:28:48.509+0000] {logging_mixin.py:151} INFO - https://m2.ru/moskva/nedvizhimost/prodazha-mnogokomnatnoi-kvartiri-129-7-m-4-8-etazh-6cf3d53e-0db8-49c3-ab47-2a6a89dd18a6/
+[2024-09-29T07:28:48.509+0000] {logging_mixin.py:151} INFO - вторичка
+[2024-09-29T07:28:48.510+0000] {logging_mixin.py:151} INFO - https://m2.ru/moskva/nedvizhimost/prodazha-kvartiri-studii-22-8-m-24-24-etazh-01c980c2-24ab-4cab-b754-d0c8ecb920d0/
+[2024-09-29T07:28:48.511+0000] {logging_mixin.py:151} INFO - новостройка
+[2024-09-29T07:28:48.513+0000] {logging_mixin.py:151} INFO - https://m2.ru/moskva/nedvizhimost/prodazha-mnogokomnatnoi-kvartiri-360-m-5-5-etazh-850ce3e6-3b96-4232-987e-fbadca795955/
+[2024-09-29T07:28:48.514+0000] {logging_mixin.py:151} INFO - вторичка
+[2024-09-29T07:28:48.516+0000] {logging_mixin.py:151} INFO - https://m2.ru/moskva/nedvizhimost/prodazha-kvartiri-studii-28-5-m-2-21-etazh-26bfea5c-1653-4573-9275-cc4a42768ce1/
+[2024-09-29T07:28:48.517+0000] {logging_mixin.py:151} INFO - новостройка
+[2024-09-29T07:28:48.518+0000] {logging_mixin.py:151} INFO - https://m2.ru/moskva/nedvizhimost/prodazha-2-komnatnoi-kvartiri-238-m-4-4-etazh-70451269-5dd9-40ee-902b-7c6ba1c1b5ab/
+[2024-09-29T07:28:48.518+0000] {logging_mixin.py:151} INFO - вторичка
+[2024-09-29T07:28:48.520+0000] {logging_mixin.py:151} INFO - https://m2.ru/moskva/nedvizhimost/prodazha-1-komnatnoi-kvartiri-37-3-m-7-21-etazh-0945d3d6-ea29-4571-8689-9ef2521cd667/
+[2024-09-29T07:28:48.521+0000] {logging_mixin.py:151} INFO - новостройка
+[2024-09-29T07:28:48.522+0000] {logging_mixin.py:151} INFO - https://m2.ru/moskva/nedvizhimost/prodazha-2-komnatnoi-kvartiri-67-6-m-6-16-etazh-181ee8f1-0a1c-4f01-9e38-cd677bab0316/
+[2024-09-29T07:28:48.524+0000] {logging_mixin.py:151} INFO - вторичка
+[2024-09-29T07:28:48.528+0000] {logging_mixin.py:151} INFO - https://m2.ru/moskva/nedvizhimost/prodazha-1-komnatnoi-kvartiri-34-6-m-19-24-etazh-d5c2f004-5e40-43b4-b435-59475452faac/
+[2024-09-29T07:28:48.529+0000] {logging_mixin.py:151} INFO - новостройка
+[2024-09-29T07:28:48.533+0000] {logging_mixin.py:151} INFO - https://m2.ru/moskva/nedvizhimost/prodazha-1-komnatnoi-kvartiri-39-m-14-16-etazh-48fbaa77-9c5b-4833-855b-c28082b9dc85/
+[2024-09-29T07:28:48.534+0000] {logging_mixin.py:151} INFO - вторичка
+[2024-09-29T07:28:48.536+0000] {logging_mixin.py:151} INFO - https://m2.ru/moskva/nedvizhimost/prodazha-3-komnatnoi-kvartiri-79-3-m-6-30-etazh-50fa3255-994b-440c-958f-d4655fec3cd1/
+[2024-09-29T07:28:48.537+0000] {logging_mixin.py:151} INFO - новостройка
+[2024-09-29T07:28:48.543+0000] {logging_mixin.py:151} INFO - https://m2.ru/moskva/nedvizhimost/prodazha-kvartiri-studii-12-1-m-1-3-etazh-9b78e2ea-67af-4bf4-b34e-aa93fda0f991/
+[2024-09-29T07:28:48.545+0000] {logging_mixin.py:151} INFO - вторичка
+[2024-09-29T07:28:48.551+0000] {logging_mixin.py:151} INFO - https://m2.ru/moskva/nedvizhimost/prodazha-1-komnatnoi-kvartiri-33-8-m-3-12-etazh-3f38fcfe-cca8-4e1d-b7dc-8c008ebe735f/
+[2024-09-29T07:28:48.552+0000] {logging_mixin.py:151} INFO - новостройка
+[2024-09-29T07:28:48.554+0000] {logging_mixin.py:151} INFO - https://m2.ru/moskva/nedvizhimost/prodazha-kvartiri-studii-26-m-29-32-etazh-01df444c-8b90-4b73-96c9-f86e5113eab2/
+[2024-09-29T07:28:48.556+0000] {logging_mixin.py:151} INFO - вторичка
+[2024-09-29T07:28:48.558+0000] {logging_mixin.py:151} INFO - https://m2.ru/moskva/nedvizhimost/prodazha-1-komnatnoi-kvartiri-29-3-m-14-42-etazh-24f0d437-3fce-45b7-923d-53b27d91a504/
+[2024-09-29T07:28:48.559+0000] {logging_mixin.py:151} INFO - новостройка
+[2024-09-29T07:28:48.586+0000] {python.py:194} INFO - Done. Returned value was: None
+[2024-09-29T07:28:48.636+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=flats, task_id=get_links, execution_date=20240929T072828, start_date=20240929T072845, end_date=20240929T072848
+[2024-09-29T07:28:48.711+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-09-29T07:28:48.918+0000] {taskinstance.py:2776} INFO - 3 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,78 @@
+[2024-09-29T07:08:30.284+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flats.create_dims manual__2024-09-29T07:07:39.005816+00:00 [queued]>
+[2024-09-29T07:08:30.302+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flats.create_dims manual__2024-09-29T07:07:39.005816+00:00 [queued]>
+[2024-09-29T07:08:30.303+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2024-09-29T07:08:30.322+0000] {taskinstance.py:1380} INFO - Executing <Task(PostgresOperator): create_dims> on 2024-09-29 07:07:39.005816+00:00
+[2024-09-29T07:08:30.334+0000] {standard_task_runner.py:57} INFO - Started process 5998 to run task
+[2024-09-29T07:08:30.340+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flats', 'create_dims', 'manual__2024-09-29T07:07:39.005816+00:00', '--job-id', '138', '--raw', '--subdir', 'DAGS_FOLDER/flats.py', '--cfg-path', '/tmp/tmp87rcalxf']
+[2024-09-29T07:08:30.345+0000] {standard_task_runner.py:85} INFO - Job 138: Subtask create_dims
+[2024-09-29T07:08:30.436+0000] {task_command.py:415} INFO - Running <TaskInstance: flats.create_dims manual__2024-09-29T07:07:39.005816+00:00 [running]> on host 5096eb060c49
+[2024-09-29T07:08:30.552+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flats' AIRFLOW_CTX_TASK_ID='create_dims' AIRFLOW_CTX_EXECUTION_DATE='2024-09-29T07:07:39.005816+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-29T07:07:39.005816+00:00'
+[2024-09-29T07:08:30.554+0000] {sql.py:274} INFO - Executing: INSERT INTO dim_text (description,processed_dttm,source) VALUES ('Цена указана с учётом скидки 25%
+В Академическом районе продаётся 2-комнатная квартира площадью 44.50 кв.м без отделки. Квартира расположена на 4-м этаже 19-этажного корпуса «1» в жилом комплексе бизнес-класса Level Академическая (компания Level Group).
+Отличная транспортная доступность
+- 1 мин. пешком до станции метро «Академическая»;
+- 8 мин. на авто до Садового кольца;
+- 4 мин. на автомобиле до ТТК;
+- 13 мин. на автомобиле до Кремля.
+Продуманный архитектурный проект
+- Современная и стильная архитектура от бюро UNK project;
+- Камерный проект из 1-го корпуса;
+- Высокие потолки в квартирах - 3,02 м;
+- Редкие форматы квартир;
+- Более 20 планировочных решений.
+Расположение
+Level Академическая расположен в одном из самых спокойных и благополучных районов Москвы. Камерный проект из 1 корпуса находится в непосредственной близости к центру города, в районе с готовой инфраструктурой и сформированной образовательной средой. В округе расположилось 80 детских садов, 50 школ, 30 вузов. Многие из них входят в топ рейтингов лучших образовательных учреждений страны. Также за 19 минут пешком вы дойдёте до РГУ нефти и газа им. И. М. Губкина, а на расстоянии 9–15-минутной поездки на автомобиле к вашим услугам ещё 6 ведущих университетов страны.
+Кроме того, район буквально утопает в зелени парков, начиная с уютного Академического в 6 минутах пешком и заканчивая одним из крупнейших в городе парком 50-летия Октября (12 минут на автомобиле). Общая площадь природных объектов в радиусе 2–6 км от дома — 476,5 га.
+Внутренняя инфраструктура и благоустройство
+На территории проекта также будет создана развитая внутренняя инфраструктура — собственный небольшой торговый центр с супермаркетом, кафе и магазинами. Помимо этого, закрытый безопасный двор на стилобате с детской игровой площадкой, зоной для занятий спортом, а также уютными местами для работы на открытом воздухе.
+Артикул К1-32.','2024-09-29 07:08:24','m2');
+INSERT INTO dim_district (district,processed_dttm,source) VALUES ('ЮЗАО','2024-09-29 07:08:24','m2');
+INSERT INTO dim_metro (metro_station,metro_time,processed_dttm,source) VALUES ('Академическая',2,'2024-09-29 07:08:24','m2');
+INSERT INTO dim_seller (seller,seller_type,processed_dttm,source) VALUES (' Level Group (Левел Групп)Недвижимость от застройщика','Застройщик','2024-09-29 07:08:24','m2');
+INSERT INTO dim_advt (active,url,processed_dttm,source) VALUES (1,'https://m2.ru/moskva/nedvizhimost/prodazha-2-komnatnoi-kvartiri-44-5-m-4-19-etazh-3a60cdf2-e9ab-4d04-9672-185a3e9fef31/','2024-09-29 07:08:24','m2');
+INSERT INTO dim_building (address,wall_material,max_floor,type,processed_dttm,source) VALUES ('Москва, ЮЗАО, Академический район, Профсоюзная улица, 2','монолит',19,'новостройка','2024-09-29 07:08:24','m2');
+INSERT INTO dim_flat_params (floor,rooms,area,furniture,repair,kitchen_furniture,wcs,washing_machine,ceil_height,processed_dttm,source) VALUES (4,2.0,44.5,NULL,NULL,NULL,1,NULL,3.02,'2024-09-29 07:08:24','m2');
+INSERT INTO dim_geo (lat,lon,processed_dttm,source) VALUES (55.687477,37.572378,'2024-09-29 07:08:24','dadata');
+[2024-09-29T07:08:30.566+0000] {base.py:73} INFO - Using connection ID 'postgres_conn' for task execution.
+[2024-09-29T07:08:30.772+0000] {base.py:73} INFO - Using connection ID 'postgres_conn' for task execution.
+[2024-09-29T07:08:31.124+0000] {sql.py:418} INFO - Running statement: INSERT INTO dim_text (description,processed_dttm,source) VALUES ('Цена указана с учётом скидки 25%
+В Академическом районе продаётся 2-комнатная квартира площадью 44.50 кв.м без отделки. Квартира расположена на 4-м этаже 19-этажного корпуса «1» в жилом комплексе бизнес-класса Level Академическая (компания Level Group).
+Отличная транспортная доступность
+- 1 мин. пешком до станции метро «Академическая»;
+- 8 мин. на авто до Садового кольца;
+- 4 мин. на автомобиле до ТТК;
+- 13 мин. на автомобиле до Кремля.
+Продуманный архитектурный проект
+- Современная и стильная архитектура от бюро UNK project;
+- Камерный проект из 1-го корпуса;
+- Высокие потолки в квартирах - 3,02 м;
+- Редкие форматы квартир;
+- Более 20 планировочных решений.
+Расположение
+Level Академическая расположен в одном из самых спокойных и благополучных районов Москвы. Камерный проект из 1 корпуса находится в непосредственной близости к центру города, в районе с готовой инфраструктурой и сформированной образовательной средой. В округе расположилось 80 детских садов, 50 школ, 30 вузов. Многие из них входят в топ рейтингов лучших образовательных учреждений страны. Также за 19 минут пешком вы дойдёте до РГУ нефти и газа им. И. М. Губкина, а на расстоянии 9–15-минутной поездки на автомобиле к вашим услугам ещё 6 ведущих университетов страны.
+Кроме того, район буквально утопает в зелени парков, начиная с уютного Академического в 6 минутах пешком и заканчивая одним из крупнейших в городе парком 50-летия Октября (12 минут на автомобиле). Общая площадь природных объектов в радиусе 2–6 км от дома — 476,5 га.
+Внутренняя инфраструктура и благоустройство
+На территории проекта также будет создана развитая внутренняя инфраструктура — собственный небольшой торговый центр с супермаркетом, кафе и магазинами. Помимо этого, закрытый безопасный двор на стилобате с детской игровой площадкой, зоной для занятий спортом, а также уютными местами для работы на открытом воздухе.
+Артикул К1-32.','2024-09-29 07:08:24','m2');
+INSERT INTO dim_district (district,processed_dttm,source) VALUES ('ЮЗАО','2024-09-29 07:08:24','m2');
+INSERT INTO dim_metro (metro_station,metro_time,processed_dttm,source) VALUES ('Академическая',2,'2024-09-29 07:08:24','m2');
+INSERT INTO dim_seller (seller,seller_type,processed_dttm,source) VALUES (' Level Group (Левел Групп)Недвижимость от застройщика','Застройщик','2024-09-29 07:08:24','m2');
+INSERT INTO dim_advt (active,url,processed_dttm,source) VALUES (1,'https://m2.ru/moskva/nedvizhimost/prodazha-2-komnatnoi-kvartiri-44-5-m-4-19-etazh-3a60cdf2-e9ab-4d04-9672-185a3e9fef31/','2024-09-29 07:08:24','m2');
+INSERT INTO dim_building (address,wall_material,max_floor,type,processed_dttm,source) VALUES ('Москва, ЮЗАО, Академический район, Профсоюзная улица, 2','монолит',19,'новостройка','2024-09-29 07:08:24','m2');
+INSERT INTO dim_flat_params (floor,rooms,area,furniture,repair,kitchen_furniture,wcs,washing_machine,ceil_height,processed_dttm,source) VALUES (4,2.0,44.5,NULL,NULL,NULL,1,NULL,3.02,'2024-09-29 07:08:24','m2');
+INSERT INTO dim_geo (lat,lon,processed_dttm,source) VALUES (55.687477,37.572378,'2024-09-29 07:08:24','dadata');, parameters: None
+[2024-09-29T07:08:31.250+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/operators/sql.py", line 280, in execute
+    output = hook.run(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 392, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 423, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.StringDataRightTruncation: value too long for type character varying(50)
+
+[2024-09-29T07:08:31.266+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=flats, task_id=create_dims, execution_date=20240929T070739, start_date=20240929T070830, end_date=20240929T070831
+[2024-09-29T07:08:31.282+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 138 for task create_dims (value too long for type character varying(50)
+; 5998)
+[2024-09-29T07:08:31.331+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-09-29T07:08:31.358+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

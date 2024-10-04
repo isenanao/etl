@@ -1,0 +1,32 @@
+[2024-09-29T07:56:07.561+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flats.transform_to_dims manual__2024-09-29T07:55:33.193072+00:00 [queued]>
+[2024-09-29T07:56:07.684+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flats.transform_to_dims manual__2024-09-29T07:55:33.193072+00:00 [queued]>
+[2024-09-29T07:56:07.689+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2024-09-29T07:56:07.960+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): transform_to_dims> on 2024-09-29 07:55:33.193072+00:00
+[2024-09-29T07:56:08.116+0000] {standard_task_runner.py:57} INFO - Started process 7053 to run task
+[2024-09-29T07:56:08.188+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'flats', 'transform_to_dims', 'manual__2024-09-29T07:55:33.193072+00:00', '--job-id', '182', '--raw', '--subdir', 'DAGS_FOLDER/flats.py', '--cfg-path', '/tmp/tmpk838v7b5']
+[2024-09-29T07:56:08.214+0000] {standard_task_runner.py:85} INFO - Job 182: Subtask transform_to_dims
+[2024-09-29T07:56:09.142+0000] {task_command.py:415} INFO - Running <TaskInstance: flats.transform_to_dims manual__2024-09-29T07:55:33.193072+00:00 [running]> on host 5096eb060c49
+[2024-09-29T07:56:11.602+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='flats' AIRFLOW_CTX_TASK_ID='transform_to_dims' AIRFLOW_CTX_EXECUTION_DATE='2024-09-29T07:55:33.193072+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-29T07:55:33.193072+00:00'
+[2024-09-29T07:56:11.705+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl.py", line 154, in create_flat_dims
+    flats_df = pd.read_csv('data/enrich/flats.csv')
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 577, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+    self.handles = get_handle(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'data/enrich/flats.csv'
+[2024-09-29T07:56:11.848+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=flats, task_id=transform_to_dims, execution_date=20240929T075533, start_date=20240929T075607, end_date=20240929T075611
+[2024-09-29T07:56:11.949+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 182 for task transform_to_dims ([Errno 2] No such file or directory: 'data/enrich/flats.csv'; 7053)
+[2024-09-29T07:56:12.439+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-09-29T07:56:12.855+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check
